@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <title>Treehouse Library</title>
+</head>
+<body>
+  <div class="container">
+    <div id="media-list">
+      <h1>{{ title }}</h1>
+      <select v-on:change="filterType()">
+        <option>Select a type of media...</option>
+        <option v-for="media in mediaList">{{ media.type }}</option>
+      </select>
+       <ul>
+        <li v-for="(media, index) in mediaList"   v-on:click="toggleDetails(index)" >
+          <h3>{{ media.title }}</h3>
+          <div id="mediaDetail" v-show="media.showDetail">
+            <p>{{ media.description }}</p>
+            <p class="byline" v-if="media.contributor">By: {{ media.contributor }}</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
