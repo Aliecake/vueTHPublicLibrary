@@ -2,14 +2,14 @@ body {
     font-family: 'Open Sans', sans-serif;
     background: #f4f4f4;
 }
-  
+
 .container {
-    max-width: 80%; 
+    max-width: 80%;
     margin: auto;
     min-height: initial;
     position: relative;
 }
-  
+
 .container > div {
     padding-bottom: 30px;
 }
@@ -99,4 +99,4 @@ select {
     width: 300px;
     outline: none;
 }
-  
+
