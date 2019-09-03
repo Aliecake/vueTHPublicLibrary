@@ -14,7 +14,7 @@
       <h1>{{ title }}</h1>
       <select v-on:change="filterType()">
         <option>Select a type of media...</option>
-        <option v-for="item in mediaList">{{ item.type }}</option>
+        <option v-for="item in uniqueItemsList">{{ item }}</option>
       </select>
        <ul>
         <li v-show="type === media.type" v-for="(media, index) in mediaList"   v-on:click="toggleDetails(index)" >
@@ -22,6 +22,7 @@
           <div id="mediaDetail" v-show="media.showDetail">
             <p>{{ media.description }}</p>
             <p class="byline" v-if="media.contributor">By: {{ media.contributor }}</p>
+            <p>{{ uniqueItemsList }}</p>
           </div>
         </li>
       </ul>
