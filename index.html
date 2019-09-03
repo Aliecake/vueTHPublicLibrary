@@ -17,12 +17,15 @@
         <option v-for="item in uniqueItemsList">{{ item }}</option>
       </select>
        <ul>
-        <li v-show="type === '' || type === media.type" v-for="(media, index) in mediaList"   v-on:click="toggleDetails(index)" >
+        <li
+        v-show="type === '' || type === media.type"
+        v-for="(media, index) in mediaList"
+        v-on:click="toggleDetails(index)"
+        v-bind:class="[media.showDetail? 'less':'more', media.type]">
           <h3>{{ media.title }}</h3>
           <div id="mediaDetail" v-show="media.showDetail">
             <p>{{ media.description }}</p>
             <p class="byline" v-if="media.contributor">By: {{ media.contributor }}</p>
-            <p>{{ uniqueItemsList }}</p>
           </div>
         </li>
       </ul>
